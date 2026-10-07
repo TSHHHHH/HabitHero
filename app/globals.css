@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0a10;
+  --foreground: #e9e6f2;
+  --surface: #15131f;
+  --surface-2: #1d1a2b;
+  --border: #2b2740;
+  --muted: #8b86a3;
+  --gold: #f2c14e;
+  --crit: #ff7a45;
+  --hp: #e5484d;
+  --xp: #8b5cf6;
+  --str: #ef4444;
+  --int: #3b82f6;
+  --vit: #22c55e;
+  --wis: #a78bfa;
+  --cha: #f59e0b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-crit: var(--crit);
+  --color-hp: var(--hp);
+  --color-xp: var(--xp);
+  --color-vit: var(--vit);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(1200px 600px at 50% -10%, #231a3d 0%, var(--background) 60%) no-repeat,
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes float-up {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-48px) scale(1.25); }
+}
+.float-up { animation: float-up 1s ease-out forwards; }
+
+@keyframes fog-drift {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.fog { transform-box: fill-box; transform-origin: center; animation: fog-drift 7s ease-in-out infinite; }
